@@ -59,6 +59,23 @@ paths:
                     }
                   ]
                 }
+    post:
+      tags:
+        - Tasks
+      operationId: addTask
+      summary: Add a task to the collection
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/task'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/task'
 components:
   schemas:
     taskList:
